@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            background-color: #000;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* Background Video */
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* Centered Profile Section */
+        .profile-section {
+
+backdrop-filter: blur(10px);          /* blur effect */
+-webkit-backdrop-filter: blur(10px);  /* Safari support */
+
+            border-radius: 15px;
+            width: 80%;
+            max-width: 1000px;
+            display: flex;
+            align-items: center;
+            padding: 30px;
+            box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(8px);
+            flex-direction: column;
+            display: none; /* Hide the main content initially */
+        }
+
+        /* Layout for Profile (Image and GIF) */
+        .profile-inner {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        /* Profile Picture */
+        .profile-picture {
+            flex: 0 0 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+        }
+
+        .fullscreen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .start-button {
+            font-size: 24px;
+            padding: 15px 30px;
+            color: black;
+            background-color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 8px;
+        }
+
+        .start-button:hover {
+            background-color: #ddd;
+        }
+
+        /* Profile Picture Styling */
+        .profile-picture img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Name GIF and Links */
+        .profile-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .profile-info img {
+            width: 300px; /* Larger GIF size */
+            margin-bottom: 20px;
+        }
+
+        .links a {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .links img {
+            width: 40px; /* Icon size */
+            height: 40px;
+        }
+
+        /* Apps Section */
+        .apps-section {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .app {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            width: 120px;
+            transition: transform 0.3s ease;
+        }
+
+        .app:hover {
+            transform: scale(1.1);
+        }
+
+        .app img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .app a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        /* About Me Paragraph */
+        .about-me {
+            margin-top: 20px;
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: justify;
+            color: #e0e0e0;
+            width: 100%;
+        }
+
+        /* Audio Section */
+        audio {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            z-index: -2;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Video -->
+    <video autoplay loop muted>
+        <source src="background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Fullscreen Button (initially shown) -->
+    <div class="fullscreen">
+        <button class="start-button" id="startBtn">????</button>
+    </div>
+
+    <!-- Profile Section (initially hidden) -->
+    <div class="profile-section">
+        <!-- Profile Picture, Name GIF, and Links -->
+        <div class="profile-inner">
+            <div class="profile-picture">
+                <img src="floki2.png" alt="Profile Picture">
+            </div>
+            <div class="profile-info">
+                <img src="floki3.gif" alt="Profile Name GIF">
+                <div class="links">
+                    <a href="https://github.com/shadeware1" target="_blank">
+                        <img src="git.png" alt="GitHub">
+                    </a>
+                    <a href="https://tryhackme.com/p/Epha110" target="_blank">
+                        <img src="tryhackme.svg" alt="TryHackMe">
+                    </a>
+                    <!-- Add other links here if needed -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Apps Section -->
+        <div class="apps-section">
+            <div class="app">
+                <a href="https://www.navy.com/" target="_blank">
+                    <img src="Seal_of_the_United_States_Department_of_the_Navy.svg.png" alt="App 1">
+                    Seamen Apprentice
+                </a>
+            </div>
+            <div class="app">
+                <a href="https://metzadhq.org" target="_blank">
+                    <img src="plain.png" alt="App 2">
+                    Metzad
+                </a>
+            </div>
+            <div class="app">
+                <a href="notice.html" target="_blank">
+                    <img src="Boxing-Gloves-icon.png" alt="App 3">
+                    Boxer
+                </a>
+            </div>
+            <div class="app">
+                <a href="notice.html" target="_blank">
+                    <img src="wraith.png" alt="App 4">
+                    Christian ☦️
+                </a>
+            </div>
+            <div class="app">
+                <a href="https://www.amazon.com/None-Dare-Call-Conspiracy-Allen/dp/B0CLFLKJB3" target="_blank">
+                    <img src="hel.png" alt="App 5">
+                    NDCC
+                </a>
+            </div>
+        </div>
+
+        <!-- About Me Section -->
+        <div class="about-me">
+            <p>Forget yourself and go to work. -Bryant S. Hinckley (& Godspeed bro)  </p>
+            <p></p>
+        </div>
+    </div>
+
+    <!-- Audio Section -->
+    <audio id="bg-music" autoplay loop>
+        <source src="breath.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        document.getElementById('startBtn').addEventListener('click', function() {
+            // Hide the fullscreen button and show the profile section
+            document.querySelector('.fullscreen').style.display = 'none';
+            document.querySelector('.profile-section').style.display = 'block';
+    
+            // Play the music after the button is clicked
+            document.getElementById('bg-music').play();
+        });
+    </script>
+
+</body>
+</html>
